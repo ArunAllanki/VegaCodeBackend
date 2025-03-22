@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const port = process.env.port || 5000;
-const db_URI = process.env.DBlink
 const compression = require("compression");
 const IRoutes = require("./Routes/InventoryRoutes");
 app = express();
@@ -11,7 +10,8 @@ app.use(express.json());
 app.use(compression());
 app.use(cors());
 
-
+const db_URI =
+  "mongodb+srv://Seva:seva.123@cluster0.ymmt4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose
   .connect(db_URI, {
